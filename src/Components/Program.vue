@@ -1,8 +1,14 @@
 <template>
-  <article>
+  <article class="flex flex-col">
     <h1 class="font-bold text-xl">Skills</h1>
-    <div v-for="item in languages" :key="item">{{ item }}</div>
-    <div v-for="item in frameworks" :key="item">{{ item }}</div>
+    <div class="flex flex-row mx-4">
+      languages:
+      <div v-for="item in languages" :key="item">{{ item }}</div>
+    </div>
+    <div class="flex flex-row mx-4">
+      framework:
+      <div v-for="item in frameworks" :key="item">{{ item }}</div>
+    </div>
   </article>
 </template>
 

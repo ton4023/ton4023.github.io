@@ -5,6 +5,7 @@ export interface Contact {
   line: string;
   github: string;
 }
+
 export interface Programming {
   languages: Languages;
   frameworks: Frameworks;
@@ -23,9 +24,14 @@ export interface Education {
   branch: string;
   year: string;
 }
-
+export interface Experience {
+  name: string;
+  year: string;
+  detail: string[];
+}
 export default interface RootState {
   myContact: Contact[];
   myProgram: Programming[];
   myEducation: Education[];
+  myExperience: Experience[];
 }

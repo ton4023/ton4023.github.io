@@ -31,6 +31,23 @@ const state: RootState = {
       year: "2014",
     },
   ],
+
+  myExperience: [
+    {
+      name: "ห้างหุ้นส่วนจำกัด บ้านบนดอย",
+      year: "Oct 2020",
+      detail: ["เปิดบิลใบกำกับภาษี", "ดูแลสต็อคสินค้า", "IT Support"],
+    },
+    {
+      name: "บริษัท ทีโอที จำกัด (มหาชน) ฝ่ายปฏิบัติการภาคใต้",
+      year: "2017",
+      detail: [
+        "นักศึกษาฝึกสหกิจ",
+        " - ระบบตรวจสอบสถานะเลขหมาย PRI (Primary Rate Interface)",
+        " - คู่มือการปฎิบัติงาน (e-Book)",
+      ],
+    },
+  ],
 };
 
 export default createStore({
