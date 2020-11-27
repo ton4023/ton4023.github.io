@@ -4,7 +4,7 @@
     <div class="flex flex-row w-full">
       <p class="mx-4">
         phone:
-        <a href="tel:+`${ Number(phone) }`">{{ phone }}</a>
+        <a href="tel:0625692976">{{ phone }}</a>
       </p>
       <p class="mx-4">
         email:

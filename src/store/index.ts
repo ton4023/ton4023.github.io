@@ -13,7 +13,7 @@ const state: RootState = {
     {
       name: "ton4023",
       email: "ton4023@gmail.com",
-      phone: "0625692976",
+      phone: "062-5692976",
       line: "https://line.me/ti/p/8fROOCHDW_",
       github: "https://github.com/ton4023",
     },
