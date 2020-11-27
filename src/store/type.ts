@@ -1,3 +1,7 @@
+export interface About {
+  [index: number]: string;
+}
+
 export interface Contact {
   name: string;
   email: string;
@@ -30,6 +34,7 @@ export interface Experience {
   detail: string[];
 }
 export default interface RootState {
+  myAbout: About[];
   myContact: Contact[];
   myProgram: Programming[];
   myEducation: Education[];

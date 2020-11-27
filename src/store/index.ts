@@ -2,6 +2,12 @@ import { createStore } from "vuex";
 import RootState from "./type";
 
 const state: RootState = {
+  myAbout: [
+    "มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/ MVC",
+    "ไม่ยึดติดกับภาษาที่เขียน ปรับเปลี่ยนตามความเหมาะสมของงาน",
+    "พร้อมรับความรู้ใหม่อยู่เสมอ ศึกษาเรียนรู้การเขียนโค๊ดเป็นประจำ และ พร้อมพัฒนาศักยภาพตัวเอง",
+  ],
+
   myContact: [
     {
       name: "ton4023",
@@ -15,7 +21,7 @@ const state: RootState = {
   myProgram: [
     {
       languages: ["Javascript", "Typescript", "PHP"],
-      frameworks: ["Vue & Vuex", "Express", "TailwindCSS"],
+      frameworks: ["Vue", "ExpressJS", "TailwinsCSS"],
     },
   ],
 
