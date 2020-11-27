@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import RootState from "./type";
-
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 const state: RootState = {
   myAbout: [
     "มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/ MVC",
@@ -56,6 +57,21 @@ const state: RootState = {
   ],
 };
 
+const actions = {
+  download(context: any, payload: any) {
+    html2canvas(payload.value, { useCORS: true }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getHeight();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.height;
+      pdf.addImage(imgData, "PNG", 10, 0, pdfWidth, pdfHeight);
+      pdf.save("resume.pdf");
+    });
+  },
+};
+
 export default createStore({
   state,
+  actions,
 });
