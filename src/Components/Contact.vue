@@ -11,12 +11,12 @@
         <a href="mailto:`${email}`">{{ email }}</a>
       </p>
       <p class="mx-4">
-        line:
+        line ID:
         <a :href="line" add target="_blank">{{ name }}</a>
       </p>
       <p class="mx-4">
         github:
-        <a :href="github" add target="_blank">{{ name }}</a>
+        <a :href="`https://${github}`" add target="_blank">{{ github }}</a>
       </p>
     </div>
   </address>

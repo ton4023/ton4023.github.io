@@ -3,6 +3,7 @@ import RootState from "./type";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 const state: RootState = {
+  
   myAbout: [
     "มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/ MVC",
     "ไม่ยึดติดกับภาษาที่เขียน ปรับเปลี่ยนตามความเหมาะสมของงาน",
@@ -15,7 +16,7 @@ const state: RootState = {
       email: "ton4023@gmail.com",
       phone: "062-5692976",
       line: "https://line.me/ti/p/8fROOCHDW_",
-      github: "https://github.com/ton4023",
+      github: "github.com/ton4023",
     },
   ],
 
@@ -58,8 +59,8 @@ const state: RootState = {
 };
 
 const actions = {
-  download(context: any, payload: any) {
-    html2canvas(payload.value, { useCORS: true }).then((canvas) => {
+  downloadPDF(context: any, payload: any) {
+    html2canvas(payload, { useCORS: true }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
       const imgProps = pdf.getImageProperties(imgData);

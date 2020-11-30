@@ -1,24 +1,34 @@
 <template>
-  <button @click="download">Save</button>
-  <div ref="el" class="container mx-auto">
-    <div class="flex flex-col justify-items-center">
+  <div class="flex justify-end mr-36">
+    <div class="flex flex-row justify-items-center items-end">
+      <div class="m-4">
+        <DarkMode />
+      </div>
+      <div class="m-4">
+        <Download :el="el" />
+      </div>
+    </div>
+  </div>
+  <div ref="el" :class="darkmode" class="container mx-auto">
+    <div
+      class="flex flex-col justify-items-center dark:bg-gray-600 dark:text-gray-200"
+    >
       <div class="flex flex-row m-10">
-        <profile />
+        <Profile />
       </div>
       <div class="flex flex-col mx-10">
-        <about />
-        <contact />
-        <program />
-        <experience />
-        <education />
+        <About />
+        <Contact />
+        <Program />
+        <Experience />
+        <Education />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import { useStore } from "vuex";
+import { defineComponent, onUpdated, ref } from "vue";
 
 import About from "./Components/About.vue";
 import Contact from "./Components/Contact.vue";
@@ -26,6 +36,8 @@ import Program from "./Components/Program.vue";
 import Education from "./Components/Education.vue";
 import Experience from "./Components/Experience.vue";
 import Profile from "./Components/Profile.vue";
+import DarkMode from "./Components/DarkMode.vue";
+import Download from "./Components/Download.vue";
 
 export default defineComponent({
   name: "App",
@@ -36,14 +48,21 @@ export default defineComponent({
     Education,
     Experience,
     Profile,
+    DarkMode,
+    Download,
   },
   setup() {
     const el = ref();
-    const store = useStore();
-    const download = () => {
-      store.dispatch("download", el);
+    const darkmode = ref("");
+
+    localStorage.theme === "dark"
+      ? (darkmode.value = "dark")
+      : (darkmode.value = "");
+
+    return {
+      el,
+      darkmode,
     };
-    return { el, download };
   },
 });
 </script>
