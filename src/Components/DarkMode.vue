@@ -31,20 +31,31 @@
 
 <script>
 import { ref, watch } from "vue";
-
+import { useStore } from "vuex";
 export default {
   name: "DarkMode",
-  setup() {
+  setup(_, { emit }) {
     const toggle = ref(false);
+    const store = useStore();
 
     localStorage.theme === "dark"
       ? (toggle.value = true)
       : (toggle.value = false);
 
+    // watch(toggle, (toggle) => {
+    //   toggle === true
+    //     ? ((localStorage.theme = "dark"),
+    //       console.log(`from DarkMode.vue ${localStorage.theme}`))
+    //     : ((localStorage.theme = ""),
+    //       console.log(`from DarkMode.vue ${localStorage.theme}`));
+    // });
+    console.log(store.state.theme);
     watch(toggle, (toggle) => {
       toggle === true
-        ? ((localStorage.theme = "dark"), location.reload())
-        : ((localStorage.theme = ""), location.reload());
+        ? (store.commit("SET_THEME", "dark"),
+          emit("updatetheme", store.state.theme))
+        : (store.commit("SET_THEME", "light"),
+          emit("updatetheme", store.state.theme));
     });
 
     return { toggle };

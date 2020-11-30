@@ -3,7 +3,8 @@ import RootState from "./type";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 const state: RootState = {
-  
+  theme:"",
+
   myAbout: [
     "มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/ MVC",
     "ไม่ยึดติดกับภาษาที่เขียน ปรับเปลี่ยนตามความเหมาะสมของงาน",
@@ -57,7 +58,11 @@ const state: RootState = {
     },
   ],
 };
-
+const mutations = {
+  SET_THEME(state: RootState,payload: string){
+    state.theme = payload
+  }
+}
 const actions = {
   downloadPDF(context: any, payload: any) {
     html2canvas(payload, { useCORS: true }).then((canvas) => {
@@ -75,4 +80,5 @@ const actions = {
 export default createStore({
   state,
   actions,
+  mutations
 });

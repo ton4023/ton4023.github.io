@@ -39,4 +39,5 @@ export default interface RootState {
   myProgram: Programming[];
   myEducation: Education[];
   myExperience: Experience[];
+  theme: String;
 }

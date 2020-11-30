@@ -2,7 +2,7 @@
   <div class="flex justify-end mr-36">
     <div class="flex flex-row justify-items-center items-end">
       <div class="m-4">
-        <DarkMode />
+        <DarkMode @updatetheme="mydata" />
       </div>
       <div class="m-4">
         <Download :el="el" />
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { computed, defineComponent, ref } from "vue";
 
 import About from "./Components/About.vue";
 import Contact from "./Components/Contact.vue";
@@ -54,14 +54,14 @@ export default defineComponent({
   setup() {
     const el = ref();
     const darkmode = ref("");
-
-    localStorage.theme === "dark"
-      ? (darkmode.value = "dark")
-      : (darkmode.value = "");
-
+    const mydata = (event: string) => {
+      console.log(`APP.VUE :${event}`);
+      darkmode.value = event;
+    };
     return {
       el,
       darkmode,
+      mydata,
     };
   },
 });
