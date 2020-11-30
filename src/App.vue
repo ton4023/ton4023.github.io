@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onUpdated, ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 import About from "./Components/About.vue";
 import Contact from "./Components/Contact.vue";
