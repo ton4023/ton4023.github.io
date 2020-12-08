@@ -5,7 +5,7 @@
     </div>
     <div class="p-2">
       <div
-        class="text-justify text-xl px-6"
+        class="text-justify text-lg px-6"
         v-for="(item, key) in myAbout"
         :key="key"
       >

@@ -8,19 +8,19 @@
       <i class="fas fa-map-marker-alt"></i>
       <a>{{ address }}</a>
     </div>
-    <div class="space-x-4 text-xl">
+    <div class="space-x-4 text-xl cursor-pointer">
       <i class="fas fa-mobile-alt"></i>
       <a href="tel:0625692976">{{ phone }}</a>
     </div>
-    <div class="space-x-4 text-xl">
+    <div class="space-x-4 text-xl cursor-pointer">
       <i class="fas fa-envelope"></i>
       <a href="mailto:`${email}`">{{ email }}</a>
     </div>
-    <div class="space-x-4 text-xl">
+    <div class="space-x-4 text-xl cursor-pointer">
       <i class="fab fa-line"></i>
       <a :href="line" add target="_blank">{{ name }}</a>
     </div>
-    <div class="space-x-4 text-xl">
+    <div class="space-x-4 text-xl cursor-pointer">
       <i class="fab fa-github"></i>
       <a :href="`https://${github}`" add target="_blank">{{ github }}</a>
     </div>
