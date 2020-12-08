@@ -1,5 +1,10 @@
 <template>
   <article>
+    <div class="p-4">
+      <h1 class="font-bold text-3xl">
+        <i class="fas fa-user-graduate px-4"></i>Education
+      </h1>
+    </div>
     <h1 class="mx-2 font-bold text-xl">Education</h1>
     <div v-for="item in myEducation" :key="item">
       <ul class="list-none m-4 p-0">

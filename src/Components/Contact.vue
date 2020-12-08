@@ -1,23 +1,28 @@
 <template>
-  <address class="flex flex-col">
-    <h1 class="mx-2 font-bold text-xl">Contact</h1>
-    <div class="flex flex-row w-full">
-      <p class="mx-4">
-        phone:
-        <a href="tel:0625692976">{{ phone }}</a>
-      </p>
-      <p class="mx-4">
-        email:
-        <a href="mailto:`${email}`">{{ email }}</a>
-      </p>
-      <p class="mx-4">
-        line ID:
-        <a :href="line" add target="_blank">{{ name }}</a>
-      </p>
-      <p class="mx-4">
-        github:
-        <a :href="`https://${github}`" add target="_blank">{{ github }}</a>
-      </p>
+  <address class="font-semibold space-y-4">
+    <div class="space-x-4 text-xl">
+      <i class="fas fa-address-card"></i>
+      <a>{{ birthday }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
+      <i class="fas fa-map-marker-alt"></i>
+      <a>{{ address }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
+      <i class="fas fa-mobile-alt"></i>
+      <a href="tel:0625692976">{{ phone }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:`${email}`">{{ email }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
+      <i class="fab fa-line"></i>
+      <a :href="line" add target="_blank">{{ name }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
+      <i class="fab fa-github"></i>
+      <a :href="`https://${github}`" add target="_blank">{{ github }}</a>
     </div>
   </address>
 </template>
@@ -36,13 +41,15 @@ export default {
     for (const key in myContact) {
       Object.assign(state, myContact[key]);
     }
-    const { name, email, phone, line, github } = state;
+    const { name, birthday, address, email, phone, line, github } = state;
     return {
       name,
       email,
       phone,
       line,
       github,
+      birthday,
+      address,
     };
   },
 };

@@ -1,6 +1,10 @@
 <template>
   <article>
-    <h1 class="mx-2 font-bold text-xl">Experience</h1>
+    <div class="p-4">
+      <h1 class="font-bold text-3xl">
+        <i class="fas fa-briefcase px-4"></i>Experience
+      </h1>
+    </div>
     <ul class="list-none m-4 p-0">
       <div v-for="item in myExperience" :key="item">
         <div class="border-r-2 border-gray-500 absolute h-24 m-3"></div>

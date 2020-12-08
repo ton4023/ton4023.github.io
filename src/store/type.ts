@@ -4,6 +4,8 @@ export interface About {
 
 export interface Contact {
   name: string;
+  birthday:string;
+  address:string;
   email: string;
   phone: string;
   line: string;
@@ -40,4 +42,5 @@ export default interface RootState {
   myEducation: Education[];
   myExperience: Experience[];
   theme: String;
+  loading: Boolean;
 }

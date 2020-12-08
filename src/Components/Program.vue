@@ -1,16 +1,18 @@
 <template>
-  <article class="flex flex-col">
-    <h1 class="mx-2 font-bold text-xl">Skills</h1>
-    <div class="flex flex-row mx-4">
+  <article class="flex flex-col justify-center">
+    <div class="p-4">
+      <h1 class="font-bold text-3xl"><i class="fas fa-code px-4"></i>Skills</h1>
+    </div>
+    <div class="flex flex-row flex-wrap mx-4 items-center">
       languages:
-      <div class="mx-4" v-for="item in languages" :key="item">
-        {{ item }}
+      <div class="p-4" v-for="item in languages" :key="item">
+        <img :src="item" alt="" class="w-36 h-12" />
       </div>
     </div>
-    <div class="flex flex-row mx-4">
+    <div class="flex flex-row flex-wrap mx-4 items-center">
       framework:
-      <div class="mx-4" v-for="item in frameworks" :key="item">
-        {{ item }}
+      <div class="p-4" v-for="item in frameworks" :key="item">
+        <img :src="item" alt="" class="w-36 h-12" />
       </div>
     </div>
   </article>
