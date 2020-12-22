@@ -22,7 +22,7 @@
       />
     </div>
     <div class="mx-2">
-      <span class="font-bold text-lg">{{
+      <span class="font-semibold text-lg text-white">{{
         toggle === false ? "Light Mode" : "Dark Mode"
       }}</span>
     </div>
@@ -31,19 +31,15 @@
 
 <script>
 import { ref, watch } from "vue";
-import { useStore } from "vuex";
+
 export default {
   name: "DarkMode",
   setup(_, { emit }) {
     const toggle = ref(false);
-    const store = useStore();
-    const { state } = store;
+    
 
     watch(toggle, (toggle) => {
-      toggle === true
-        ? (store.commit("SET_THEME", "dark"), emit("updatetheme", state.theme))
-        : (store.commit("SET_THEME", "light"),
-          emit("updatetheme", state.theme));
+      toggle === true ? emit("theme", "dark") : emit("theme", "");
     });
 
     return { toggle };

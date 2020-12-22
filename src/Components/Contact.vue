@@ -1,5 +1,5 @@
 <template>
-  <address class="font-semibold space-y-4">
+  <address class="font-serif space-y-4">
     <div class="space-x-4 text-xl">
       <i class="fas fa-address-card"></i>
       <a>{{ birthday }}</a>

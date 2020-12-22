@@ -32,12 +32,17 @@ const state: RootState = {
       languages: [
       "https://symbols-electrical.getvecta.com/stencil_25/41_javascript.4ce34e7594.svg",
        "https://symbols-electrical.getvecta.com/stencil_25/87_typescript.2ab2b3dcfe.svg", 
-       "https://symbols-electrical.getvecta.com/stencil_91/59_php.eed3049ba1.svg"],
+       "https://symbols-electrical.getvecta.com/stencil_91/59_php.eed3049ba1.svg"
+      ],
       frameworks: [
         "https://symbols-electrical.getvecta.com/stencil_25/89_vuejs.fc3ffff5cd.svg",
          "https://symbols-electrical.getvecta.com/stencil_79/87_expressjs.72a4a0d57c.svg", 
          "https://symbols-electrical.getvecta.com/stencil_97/2_tailwind-css.541185202d.svg"
-        ],
+      ],
+      tools: [
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1051px-Adobe_XD_CC_icon.svg.png",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Adobe_Photoshop_CS6_icon.svg/1041px-Adobe_Photoshop_CS6_icon.svg.png"
+      ]
     },
   ],
 
@@ -80,6 +85,7 @@ const mutations = {
   }
 }
 const actions = {
+  // eslint-disable-next-line
   downloadPDF(context: any , payload: any) {
     context.commit('SET_LOAD',true)
     html2canvas(payload, { useCORS: true }).then((canvas) => {

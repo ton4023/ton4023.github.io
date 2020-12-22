@@ -15,6 +15,7 @@ export interface Contact {
 export interface Programming {
   languages: Languages;
   frameworks: Frameworks;
+  tools:Tools
 }
 
 export interface Languages {
@@ -22,6 +23,10 @@ export interface Languages {
 }
 
 export interface Frameworks {
+  [index: number]: string;
+}
+
+export interface Tools {
   [index: number]: string;
 }
 
