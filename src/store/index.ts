@@ -1,7 +1,6 @@
 import { createStore } from "vuex";
 import RootState from "./type";
-import html2canvas from 'html2canvas'
-import { jsPDF } from "jspdf";
+
 const state: RootState = {
   theme: "",
 
@@ -48,7 +47,7 @@ const state: RootState = {
 
   myEducation: [
     {
-      name: "คณะบริหารธุรกิจ มทร.ศรีวิชัย",
+      name: "คณะบริหารธุรกิจ มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย",
       branch: "ระบบสารสนเทศ",
       year: "2018",
     },
@@ -57,16 +56,17 @@ const state: RootState = {
       branch: "ศิลป์-คำนวน",
       year: "2014",
     },
+    
   ],
 
   myExperience: [
     {
       name: "ห้างหุ้นส่วนจำกัด บ้านบนดอย",
-      year: "Oct 2020",
-      detail: ["เปิดบิลใบกำกับภาษี", "ดูแลสต็อคสินค้า", "IT Support"],
+      year: "2019",
+      detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า", "IT Support"],
     },
     {
-      name: "บริษัท ทีโอที จำกัด (มหาชน) ฝ่ายปฏิบัติการภาคใต้",
+      name: "บริษัท ทีโอที จำกัด (มหาชน)",
       year: "2017",
       detail: [
         "นักศึกษาฝึกสหกิจ",
@@ -84,25 +84,24 @@ const mutations = {
     state.loading = payload
   }
 }
-const actions = {
-  // eslint-disable-next-line
-  downloadPDF(context: any , payload: any) {
-    context.commit('SET_LOAD',true)
-    html2canvas(payload, { useCORS: true }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getHeight();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.height;
-      pdf.addImage(imgData, "PNG", 10, 0, pdfWidth, pdfHeight);
-      pdf.save("narongpol-prommajan.pdf");
-      context.commit('SET_LOAD',false)
-    }) 
-  },
-};
+// const actions = {
+//   // eslint-disable-next-line
+//   downloadPDF(context: any , payload: any) {
+//     context.commit('SET_LOAD',true)
+//     html2canvas(payload, { useCORS: true }).then((canvas) => {
+//       const imgData = canvas.toDataURL("image/png");
+//       const pdf = new jsPDF();
+//       const imgProps = pdf.getImageProperties(imgData);
+//       const pdfWidth = pdf.internal.pageSize.getHeight();
+//       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.height;
+//       pdf.addImage(imgData, "PNG", 10, 0, pdfWidth, pdfHeight);
+//       pdf.save("resume.pdf");
+//       context.commit('SET_LOAD',false)
+//     }) 
+//   },
+// };
 
 export default createStore({
   state,
-  actions,
   mutations
 });

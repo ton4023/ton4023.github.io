@@ -1,13 +1,13 @@
 <template>
   <article>
     <h1 class="font-bold text-5xl text-white">About Me</h1>
-    <div class="flex flex-row items-center p-10">
-      <div class="w-1/6 justify-center">
+    <div class="flex flex-row items-start p-10">
+      <div class="w-1/6 justify-center py-10">
         <img :src="icons" class="w-24 h-24" />
       </div>
       <div class="w-5/6">
         <!-- card -->
-        <div class="shadow-lg rounded-lg mx-4 max-w-md md:max-w-6xl">
+        <div class="mx-4 max-w-md md:max-w-6xl">
           <div
             class="px-6 py-10 text-justify text-white text-xl font-semibold"
             v-for="(item, key) in myAbout"
@@ -15,6 +15,11 @@
           >
             {{ item }}
           </div>
+        </div>
+        <div class="border-t-2 border-white w-full relative"></div>
+        <div class="m-6 mx-10">
+          <h2 class="font-semibold text-2xl text-white py-4">Basic info</h2>
+          <Contact />
         </div>
       </div>
     </div>
@@ -24,8 +29,12 @@
 <script >
 import { ref } from "vue";
 import { useStore } from "vuex";
+import Contact from "./Contact.vue";
 export default {
   name: "About",
+  components: {
+    Contact,
+  },
   setup() {
     const store = useStore();
     const icons = ref(

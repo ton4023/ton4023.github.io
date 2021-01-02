@@ -10,16 +10,22 @@
           >
         </div>
       </div>
-      <div class="flex md:flex-row md:max-w-6xl m-10">
-        <div
-          class="p-4 md:px-6"
-          v-for="item in languages"
-          :key="item"
-        >
+      <div class="flex flex-wrap md:flex-row md:max-w-6xl m-10">
+        <div class="p-4 md:px-6" v-for="item in languages" :key="item">
           <img :src="item" alt="" class="md:w-36 md:h-12 h-8 w-16" />
         </div>
         <div class="p-4 md:px-6" v-for="item in frameworks" :key="item">
-          <img :src="item" alt="" class="md:w-36 md:h-12 h-8 w-16" />
+          <img :src="item" alt="" class="md:w-36 md:h-12 h-8 w-auto" />
+        </div>
+      </div>
+      <div class="h-full">
+        <div class="pt-10">
+          <span class="font-semibold text-white text-3xl">Software</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap md:flex-row md:max-w-6xl m-10">
+        <div class="p-4 md:px-6" v-for="item in tools" :key="item">
+          <img :src="item" alt="" class="md:w-14 md:h-12 h-8 w-14" />
         </div>
       </div>
     </div>
@@ -43,10 +49,11 @@ export default {
     for (const key in myProgram) {
       Object.assign(state, myProgram[key]);
     }
-    const { languages, frameworks } = state;
+    const { languages, frameworks, tools } = state;
     return {
       languages,
       frameworks,
+      tools,
       icons,
     };
   },
