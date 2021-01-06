@@ -1,10 +1,10 @@
 <template>
   <article>
-    <h1 class="font-bold text-5xl text-white">Experience</h1>
+    <h1 class="font-nunito font-bold text-5xl dark:text-white">Experience</h1>
     <div class="flex flex-col" v-for="item in myExperience" :key="item">
       <!-- component -->
-      <div class="flex flex-row relative">
-        <div class="flex-1 mr-10 font-semibold text-right mt-2 text-2xl">
+      <div class="flex flex-row relative font-prompt dark:text-gray-400">
+        <div class="flex-1 mr-10 text-right mt-2 text-2xl">
           {{ item.year }}
         </div>
         <div class="ml-4 w-1/2">
@@ -17,7 +17,7 @@
                 <div class="w-12 h-12 z-10 -mx-6">
                   <img :src="icons" />
                 </div>
-                <div class="flex-1 ml-12 font-semibold text-2xl">
+                <div class="flex-1 ml-12 text-2xl">
                   {{ item.name }}
                 </div>
               </div>

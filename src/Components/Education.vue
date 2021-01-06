@@ -1,15 +1,15 @@
 <template>
   <article>
-    <h1 class="font-bold text-5xl text-white">Experience</h1>
+    <h1 class="font-nunito font-bold text-5xl dark:text-white">Experience</h1>
     <div class="flex flex-col" v-for="item in myEducation" :key="item">
       <!-- component -->
 
-      <div class="flex flex-row relative">
+      <div class="flex flex-row relative font-prompt dark:text-gray-400">
         <div class="w-1/2 text-right">
           <ul class="list-none m-0 p-0">
             <li class="mb-2">
               <div class="flex items-center mb-1">
-                <div class="flex-1 ml-12 font-semibold text-2xl mr-12">
+                <div class="flex-1 ml-12 text-2xl mr-12">
                   {{ item.branch }}
                 </div>
                 <div class="w-12 h-12 z-10 -mx-6">
@@ -26,7 +26,7 @@
           ></div>
         </div>
 
-        <div class="flex-1 ml-12 font-semibold text-left mt-2 text-2xl">
+        <div class="flex-1 ml-12 text-left mt-2 text-2xl">
           {{ item.year }}
         </div>
       </div>

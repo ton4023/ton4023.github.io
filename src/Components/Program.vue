@@ -1,11 +1,11 @@
 <template>
   <article>
-    <h1 class="font-bold text-5xl text-white">Skills</h1>
+    <h1 class="font-nunito font-bold text-5xl dark:text-white">Skills</h1>
     <div class="flex flex-col items-center">
       <div class="h-full">
         <img :src="icons" class="h-72" />
         <div class="pt-10">
-          <span class="font-semibold text-white text-3xl"
+          <span class="font-semibold dark:text-gray-200 text-3xl"
             >languages / framework</span
           >
         </div>
@@ -20,7 +20,9 @@
       </div>
       <div class="h-full">
         <div class="pt-10">
-          <span class="font-semibold text-white text-3xl">Software</span>
+          <span class="font-semibold dark:text-gray-200 text-3xl"
+            >Software</span
+          >
         </div>
       </div>
       <div class="flex flex-wrap md:flex-row md:max-w-6xl m-10">

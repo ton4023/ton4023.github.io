@@ -3,6 +3,11 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        'prompt': ['Prompt', 'sans-serif'],
+        'comfortaa': ['Comfortaa', 'cursive'],
+        'nunito': ['Nunito', 'sans-serif']
+      },
       colors: {
         brand: '#1A5276',
         turquoise: {

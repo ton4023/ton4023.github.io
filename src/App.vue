@@ -21,8 +21,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, onUnmounted, onMounted } from "vue";
+<script >
+import { ref, onUnmounted, onMounted } from "vue";
 import About from "./Components/About.vue";
 import Program from "./Components/Program.vue";
 import Education from "./Components/Education.vue";
@@ -30,7 +30,7 @@ import Experience from "./Components/Experience.vue";
 import Profile from "./Components/Profile.vue";
 import Darkmode from "./Components/DarkMode.vue";
 
-export default defineComponent({
+export default {
   name: "App",
   components: {
     About,
@@ -44,7 +44,7 @@ export default defineComponent({
     const mode = ref("");
     const profile = ref();
     const isActive = ref();
-    const theme = (event: string) => {
+    const theme = (event) => {
       mode.value = event;
     };
 
@@ -72,5 +72,5 @@ export default defineComponent({
       profile,
     };
   },
-});
+};
 </script>

@@ -1,24 +1,30 @@
 <template>
   <article>
-    <h1 class="font-bold text-5xl text-white">About Me</h1>
+    <h1 class="font-nunito font-bold text-5xl dark:text-white">About Me</h1>
     <div class="flex flex-row items-start p-10">
       <div class="w-1/6 justify-center py-10">
         <img :src="icons" class="w-24 h-24" />
       </div>
       <div class="w-5/6">
         <!-- card -->
-        <div class="mx-4 max-w-md md:max-w-6xl">
+        <div
+          class="mx-4 max-w-md md:max-w-6xl bg-gray-400 dark:bg-gray-600 rounded-lg shadow-lg"
+        >
           <div
-            class="px-6 py-10 text-justify text-white text-xl font-semibold"
+            class="px-6 py-10 text-justify text-black dark:text-white md:text-2xl text-xl font-prompt"
             v-for="(item, key) in myAbout"
             :key="key"
           >
             {{ item }}
           </div>
         </div>
-        <div class="border-t-2 border-white w-full relative"></div>
+        <div
+          class="border-t-2 border-gray-800 dark:border-white w-full relative mt-10"
+        ></div>
         <div class="m-6 mx-10">
-          <h2 class="font-semibold text-2xl text-white py-4">Basic info</h2>
+          <h2 class="font-semibold text-2xl text-gray-600 dark:text-white py-2">
+            Basic info
+          </h2>
           <Contact />
         </div>
       </div>
