@@ -1,9 +1,12 @@
 <template>
   <article>
     <h1 class="font-nunito font-bold text-5xl dark:text-white">About Me</h1>
-    <div class="flex flex-row items-start p-10">
-      <div class="w-1/6 justify-center py-10">
-        <img :src="icons" class="w-24 h-24" />
+    <div class="flex flex-col md:flex-row md:items-start items-center p-10">
+      <div class="w-1/6 justify-center md:p-10 pb-4">
+        <img
+          :src="img"
+          class="md:w-28 md:h-32 w-24 h-24 rounded-lg shadow-lg"
+        />
       </div>
       <div class="w-5/6">
         <!-- card -->
@@ -11,7 +14,8 @@
           class="mx-4 max-w-md md:max-w-6xl bg-gray-400 dark:bg-gray-600 rounded-lg shadow-lg"
         >
           <div
-            class="px-6 py-10 text-justify text-black dark:text-white md:text-2xl text-xl font-prompt"
+            class="px-6 py-4 text-justify text-black dark:text-white md:text-2xl text-xl font-prompt"
+            style="text-indent: 50px"
             v-for="(item, key) in myAbout"
             :key="key"
           >
@@ -43,14 +47,14 @@ export default {
   },
   setup() {
     const store = useStore();
-    const icons = ref(
-      "data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQyMSA0MDV2OTJjMCA4LjM5OS02LjU5OSAxNS0xNSAxNWgtNjEuOGwtODguMi00Ny04OC4yIDQ3aC02MS44Yy04LjQwMSAwLTE1LTYuNjAxLTE1LTE1di05MmMwLTU3LjkgNDcuMS0xMDUgMTA1LTEwNWgxMjBjNTcuOSAwIDEwNSA0Ny4xIDEwNSAxMDV6IiBmaWxsPSIjZmFiZTJjIi8+PHBhdGggZD0ibTQyMSA0MDV2OTJjMCA4LjM5OS02LjU5OSAxNS0xNSAxNWgtNjEuOGwtODguMi00N3YtMTY1aDYwYzU3LjkgMCAxMDUgNDcuMSAxMDUgMTA1eiIgZmlsbD0iI2ZmOTEwMCIvPjxwYXRoIGQ9Im0zNzIuNCAzNjUuMDk5Yy0yLjk5OS0zLjMtNy4yLTUuMDk5LTExLjQtNS4wOTloLTIxMGMtNC4yIDAtOC40MDEgMS44LTExLjQgNS4wOTktMi42OTkgMy4zLTMuOSA3LjUtMy42IDExLjdsMTYuOCAxMzUuMjAxaDIwNi40bDE2LjgtMTM1LjJjLjMtNC4yMDEtLjkwMS04LjQwMS0zLjYtMTEuNzAxeiIgZmlsbD0iIzU3NWY2NCIvPjxwYXRoIGQ9Im0zOTEgMTgwYzAgMTYuNS0xMy41IDMwLTMwIDMwaC00LjUwMWMtMTYuOCA2Ny4yLTkyLjk5OSA4OC41LTk2LjU5OSA4OS4zOTktMS4xOTkuMy0yLjcwMS42MDEtMy45LjYwMXMtMi43MDEtLjMtMy45LS42MDFjLTMuNi0uODk5LTc5Ljc5OS0yMi4yLTk2LjU5OS04OS4zOTloLTQuNTAxYy0xNi41IDAtMzAtMTMuNS0zMC0zMCAwLTE5LjgwMSA0LjUwMS0zOS4zIDEzLjUtNTYuN2wxNi41LTMzLjNoMjEwbDE2LjUgMzMuM2M4Ljk5OSAxNy40IDEzLjUgMzYuODk5IDEzLjUgNTYuN3oiIGZpbGw9IiNmZmUwZDYiLz48cGF0aCBkPSJtMzkxIDE4MGMwIDE2LjUtMTMuNSAzMC0zMCAzMGgtNC41MDFjLTE2LjggNjcuMi05Mi45OTkgODguNS05Ni41OTkgODkuMzk5LTEuMTk5LjMtMi43MDEuNjAxLTMuOS42MDF2LTIxMGgxMDVsMTYuNSAzMy4zYzguOTk5IDE3LjQgMTMuNSAzNi44OTkgMTMuNSA1Ni43eiIgZmlsbD0iI2ZkY2RiZiIvPjxwYXRoIGQ9Im0zNzYgMzc2LjgtMTYuOCAxMzUuMmgtMTAzLjJ2LTE1MmgxMDVjNC4yIDAgOC40MDEgMS44IDExLjQgNS4wOTkgMi42OTkgMy4zIDMuOSA3LjUgMy42IDExLjcwMXoiIGZpbGw9IiM0NzRmNTQiLz48cGF0aCBkPSJtMTIxIDE4MGMwLTE2LjUgMTMuNS0zMCAzMC0zMCAzLjAyMSAwIDQ4LjAyMSAwIDQ1IDAgOC4yOTEgMCAxNS02LjcwOSAxNS0xNSAwLTExLjQ1NSA0LjQ2OC0yMi42MzIgMTIuMjYxLTMwLjY1OSAzLjI1Mi0zLjM1NCA0Ljc2MS04LjA0MiA0LjA3Mi0xMi42NzEtLjcwMy00LjYxNC0zLjUwMS04LjY1Ny03LjYwMy0xMC45MTMtMTQuOTU2LTguMjMyLTI2Ljc0OC0yMS41NDgtMzMuMjM3LTM3LjUxNS0xLjg3NS00LjYtNS45MTgtNy45ODMtMTAuNzgxLTkuMDIzLTQuOTA3LTEuMDI1LTkuOTMyLjQxLTEzLjUwNiAzLjg1My0yNi4xOTEgMjUuMTUxLTQxLjIwNiA2MC40ODMtNDEuMjA2IDk2LjkyOHoiIGZpbGw9IiM0NzRmNTQiLz48cGF0aCBkPSJtMzkxIDEzNXY0NWMwLTE2LjUtMTMuNS0zMC0zMC0zMCAwIDAtNDIuMDAxIDAtNDUgMC04LjQwMSAwLTE1LTYuNjAxLTE1LTE1IDAtNS4xMDEtLjkwMS0xMC4yMDEtMi43MDEtMTVoLTQyLjI5OWMtMTcuNzAxIDAtMzQuNTAxLTQuMi01MC43LTEyLjktMjEtMTEuNy0zNy41LTMwLjMtNDYuNS01Mi41LTUuMDk5LTEyLjktNy44LTI2LjEtNy44LTM5LjYgMC0zLjkgMS41LTcuOCA0LjUwMS0xMC40OTkgMi42OTktMy4wMDEgNi41OTktNC41MDEgMTAuNDk5LTQuNTAxaDkwYzc0LjM5OSAwIDEzNSA2MC42MDEgMTM1IDEzNXoiIGZpbGw9IiM1NzVmNjQiLz48cGF0aCBkPSJtMzkxIDEzNXY0NWMwLTE2LjUtMTMuNS0zMC0zMC0zMCAwIDAtNDIuMDAxIDAtNDUgMC04LjQwMSAwLTE1LTYuNjAxLTE1LTE1IDAtNS4xMDEtLjkwMS0xMC4yMDEtMi43MDEtMTVoLTQyLjI5OXYtMTIwYzc0LjM5OSAwIDEzNSA2MC42MDEgMTM1IDEzNXoiIGZpbGw9IiM0NzRmNTQiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSI0MzUiIGZpbGw9IiNmMGY3ZmYiIHI9IjE1Ii8+PHBhdGggZD0ibTI3MSA0MzVjMCA4LjM5OS02LjU5OSAxNS0xNSAxNXYtMzBjOC40MDEgMCAxNSA2LjU5OSAxNSAxNXoiIGZpbGw9IiNkZmU3ZjQiLz48L2c+PC9zdmc+"
+    const img = ref(
+      "https://scontent.fbkk2-6.fna.fbcdn.net/v/t1.0-9/43185847_2081396695256137_4491209419815649280_n.jpg?_nc_cat=109&ccb=2&_nc_sid=174925&_nc_eui2=AeGX7l-W2DqmQYn31PgfAeVILqo88SbQ6kAuqjzxJtDqQNspv4d4iu9z_hrEweOO7Qe2OdgJvcT3jMWnSa-yEzaO&_nc_ohc=49sgqZs2BT8AX8_oNmn&_nc_ht=scontent.fbkk2-6.fna&oh=07ec7dfbf590c3d548873a9937a66730&oe=601AB95E"
     );
     const {
       state: { myAbout },
     } = store;
     console.log();
-    return { myAbout, icons };
+    return { myAbout, img };
   },
 };
 </script>

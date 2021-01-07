@@ -3,6 +3,7 @@ export interface About {
 }
 
 export interface Contact {
+  fullname: string;
   name: string;
   birthday:string;
   address:string;

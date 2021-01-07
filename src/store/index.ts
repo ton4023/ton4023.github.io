@@ -7,15 +7,16 @@ const state: RootState = {
   loading: false,
 
   myAbout: [
-    `งานก่อนหน้าทำเกี่ยวกับงานธุรการบัญชี เริ่มกลับมาเขียนโปรแกรม
-    มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/MVC
-    อาจไม่รู้ทุกเรื่อง แต่รู้ว่าควรหาคำตอบจากไหน
+    `สวัสดีครับ ผมกำลังหางาน web developer ก่อนหน้างานที่ทำเกี่ยวกับงานธุรการบัญชี หน้าที่หลักคือ ออกบิลใบกำกับภาษี ออกใบสั่งศื้อสินค้า ใช้โปรแกรม Express ในการทำงาน ตอนนี้อยากกลับมาเขียนโปรแกรม
+    `,
+    `   มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/MVC
     ไม่ยึดติดกับภาษาโปรแกรมมิ่ง ปรับเปลี่ยนตามความเหมาะสมของงาน
-    พร้อมรับความรู้ใหม่อยู่เสมอ ศึกษาเรียนรู้การเขียนโค๊ดเป็นประจำ และ พร้อมพัฒนาศักยภาพตัวเอง`,
+    พร้อมรับความรู้ใหม่อยู่เสมอ ศึกษาเรียนรู้การเขียนโค๊ดเป็นประจำ และ พร้อมพัฒนาศักยภาพตัวเอง`
   ],
 
   myContact: [
     {
+      fullname:'Narongpol Prommajan',
       name: "ton4023",
       birthday: 'August 5, 1996',
       address:'Khlong Hoi Khong, Songkhla',
@@ -49,12 +50,12 @@ const state: RootState = {
     {
       name: "คณะบริหารธุรกิจ มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย",
       branch: "ระบบสารสนเทศ",
-      year: "2018",
+      year: "2014 - 2018",
     },
     {
       name: "วิทยาลัยเทคโนโลยีส่องแสงพณิชยการ",
       branch: "ศิลป์-คำนวน",
-      year: "2014",
+      year: "2011 - 2014",
     },
     
   ],
@@ -62,15 +63,17 @@ const state: RootState = {
   myExperience: [
     {
       name: "ห้างหุ้นส่วนจำกัด บ้านบนดอย",
-      year: "2019",
+      year:"Jun 2019 - Oct 2020",
       detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า", "IT Support"],
     },
     {
       name: "บริษัท ทีโอที จำกัด (มหาชน)",
-      year: "2017",
+      year: "Jun - Oct 2017",
       detail: [
         "นักศึกษาฝึกสหกิจ",
-        " - ระบบตรวจสอบสถานะเลขหมาย PRI (Primary Rate Interface)",
+        "- ระบบตรวจสอบสถานะเลขหมาย PRI (Primary Rate Interface)",
+        '(ใช้คำสั่ง telnet ไปยังตู้เลขหมายเพื่อดูสถานะการทำงานของเลขหมาย นำมาแสดงผลในหน้าเว็บ และ ส่งคำสั่งรีเซ็ตการทำงานของอุปกรณ์ )'
+        ,
         " - คู่มือการปฎิบัติงาน (e-Book)",
       ],
     },
@@ -84,22 +87,6 @@ const mutations = {
     state.loading = payload
   }
 }
-// const actions = {
-//   // eslint-disable-next-line
-//   downloadPDF(context: any , payload: any) {
-//     context.commit('SET_LOAD',true)
-//     html2canvas(payload, { useCORS: true }).then((canvas) => {
-//       const imgData = canvas.toDataURL("image/png");
-//       const pdf = new jsPDF();
-//       const imgProps = pdf.getImageProperties(imgData);
-//       const pdfWidth = pdf.internal.pageSize.getHeight();
-//       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.height;
-//       pdf.addImage(imgData, "PNG", 10, 0, pdfWidth, pdfHeight);
-//       pdf.save("resume.pdf");
-//       context.commit('SET_LOAD',false)
-//     }) 
-//   },
-// };
 
 export default createStore({
   state,

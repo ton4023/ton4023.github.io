@@ -1,6 +1,10 @@
 <template>
   <address class="font-nunito space-y-4 text-gray-600 dark:text-gray-200">
     <div class="space-x-4 text-xl">
+      <i class="fas fa-user-tie"></i>
+      <a>{{ fullname }}</a>
+    </div>
+    <div class="space-x-4 text-xl">
       <i class="fas fa-address-card"></i>
       <a>{{ birthday }}</a>
     </div>
@@ -41,7 +45,16 @@ export default {
     for (const key in myContact) {
       Object.assign(state, myContact[key]);
     }
-    const { name, birthday, address, email, phone, line, github } = state;
+    const {
+      name,
+      birthday,
+      address,
+      email,
+      phone,
+      line,
+      github,
+      fullname,
+    } = state;
     return {
       name,
       email,
@@ -50,6 +63,7 @@ export default {
       github,
       birthday,
       address,
+      fullname,
     };
   },
 };

@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col-reverse items-center max-h-screen">
-    <div class="w-1/2 mt-20 md:mt-28">
+    <div class="w-1/2 mt-14 md:mt-16">
       <div
         ref="profile"
         class="text-center animate__animated animate__bounceInUp animate__slower"
       >
-        <h1 class="text-5xl font-comfortaa pb-20 text-blue-900">
+        <h1 class="text-5xl font-comfortaa pb-10 text-blue-900">
           I'm Narongpol Prommajan
         </h1>
         <h2
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div
-      class="w-1/2 mt-10 md:mt-20 items-center text-center animate__animated animate__bounceInDown animate__slower"
+      class="w-1/2 mt-10 md:mt-16 items-center text-center animate__animated animate__bounceInDown animate__slower"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +230,7 @@
   </div>
 
   <div
-    class="w-12 h-12 absolute inset-x-1/2 bottom-0 animate__animated animate__fadeInDown animate__infinite animate__slow"
+    class="md:w-10 md:h-10 h-8 w-8 absolute inset-x-1/2 bottom-0 animate__animated animate__fadeInDown animate__infinite animate__slow"
   >
     <img :src="icon" />
   </div>
