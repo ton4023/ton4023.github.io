@@ -1,7 +1,9 @@
 <template>
   <article>
-    <h1 class="font-nunito font-bold text-5xl dark:text-white">About Me</h1>
-    <div class="flex flex-col md:flex-row md:items-start items-center p-10">
+    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">
+      About Me
+    </h1>
+    <div class="flex flex-row items-start md:p-10 p-4">
       <div class="w-1/6 justify-center md:p-10 pb-4">
         <img
           :src="img"
@@ -42,6 +44,7 @@ import { useStore } from "vuex";
 import Contact from "./Contact.vue";
 export default {
   name: "About",
+  props: ["active"],
   components: {
     Contact,
   },

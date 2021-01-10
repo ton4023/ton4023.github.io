@@ -1,6 +1,8 @@
 <template>
   <article>
-    <h1 class="font-nunito font-bold text-5xl dark:text-white">Skills</h1>
+    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">
+      Skills
+    </h1>
     <div class="flex flex-col items-center">
       <div class="h-full">
         <img :src="icons" class="h-72" />
@@ -27,7 +29,7 @@
       </div>
       <div class="flex flex-wrap md:flex-row md:max-w-6xl m-10">
         <div class="p-4 md:px-6" v-for="item in tools" :key="item">
-          <img :src="item" alt="" class="md:w-14 md:h-12 h-8 w-14" />
+          <img :src="item" alt="" class="md:w-14 md:h-14 h-8 w-14" />
         </div>
       </div>
     </div>
@@ -39,6 +41,7 @@ import { reactive, ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "Program",
+  props: ["active"],
   setup() {
     const store = useStore();
     const state = reactive({});

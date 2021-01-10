@@ -7,7 +7,7 @@ const state: RootState = {
   loading: false,
 
   myAbout: [
-    `สวัสดีครับ ผมกำลังหางาน web developer ก่อนหน้างานที่ทำเกี่ยวกับงานธุรการบัญชี หน้าที่หลักคือ ออกบิลใบกำกับภาษี ออกใบสั่งศื้อสินค้า ใช้โปรแกรม Express ในการทำงาน ตอนนี้อยากกลับมาเขียนโปรแกรม
+    `สวัสดีครับ ผมกำลังหางาน web developer ก่อนหน้างานที่ทำเกี่ยวกับงานธุรการบัญชี ตอนนี้อยากกลับมาเขียนโปรแกรม
     `,
     `   มีพื้นฐานการเขียนโค๊ด เข้าใจแนวคิดการเขียนโปรแกรมแบบ OOP/MVC
     ไม่ยึดติดกับภาษาโปรแกรมมิ่ง ปรับเปลี่ยนตามความเหมาะสมของงาน
@@ -41,7 +41,8 @@ const state: RootState = {
       ],
       tools: [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1051px-Adobe_XD_CC_icon.svg.png",
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Adobe_Photoshop_CS6_icon.svg/1041px-Adobe_Photoshop_CS6_icon.svg.png"
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Adobe_Photoshop_CS6_icon.svg/1041px-Adobe_Photoshop_CS6_icon.svg.png",
+          "https://lh3.googleusercontent.com/proxy/_i2dUD5cAycH9KbDSxrlVyh0ekmKYzriEVnuUNbpe7ZPTVzGcoiYPBCNyZBQ13T6Pt7C5IR68IQqJXr9o5-tewsMyW_hdDeJK0CKOQJcD4Uf_3uyakTEo9epgHdiP8MwNO5vDQ"
       ]
     },
   ],
@@ -64,7 +65,7 @@ const state: RootState = {
     {
       name: "ห้างหุ้นส่วนจำกัด บ้านบนดอย",
       year:"Jun 2019 - Oct 2020",
-      detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า", "IT Support"],
+      detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า",],
     },
     {
       name: "บริษัท ทีโอที จำกัด (มหาชน)",
