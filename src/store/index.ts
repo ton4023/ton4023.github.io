@@ -42,7 +42,7 @@ const state: RootState = {
       tools: [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1051px-Adobe_XD_CC_icon.svg.png",
           "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Adobe_Photoshop_CS6_icon.svg/1041px-Adobe_Photoshop_CS6_icon.svg.png",
-          "https://lh3.googleusercontent.com/proxy/_i2dUD5cAycH9KbDSxrlVyh0ekmKYzriEVnuUNbpe7ZPTVzGcoiYPBCNyZBQ13T6Pt7C5IR68IQqJXr9o5-tewsMyW_hdDeJK0CKOQJcD4Uf_3uyakTEo9epgHdiP8MwNO5vDQ"
+          "http://www.esg.co.th/esg/Image/content_img/2012051410-52-07-0002.png"
       ]
     },
   ],
@@ -56,7 +56,7 @@ const state: RootState = {
     {
       name: "วิทยาลัยเทคโนโลยีส่องแสงพณิชยการ",
       branch: "ศิลป์-คำนวน",
-      year: "2011 - 2014",
+      year: "2011 - 2013",
     },
     
   ],

@@ -1,6 +1,9 @@
 <template>
   <article>
-    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">
+    <h1
+      class="font-nunito font-bold dark:text-white text-5xl animate__animated animate__slow"
+      :class="[scrollY >= rect ? 'animate__fadeInLeft' : '']"
+    >
       Skills
     </h1>
     <div class="flex flex-col items-center">
@@ -41,7 +44,7 @@ import { reactive, ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "Program",
-  props: ["active"],
+  props: ["rect", "scrollY"],
   setup() {
     const store = useStore();
     const state = reactive({});

@@ -1,6 +1,8 @@
 <template>
   <article>
-    <h1 class="font-nunito font-bold text-5xl dark:text-white">Experience</h1>
+    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">
+      Experience
+    </h1>
     <div class="flex flex-col" v-for="item in myEducation" :key="item">
       <!-- component -->
 
@@ -39,6 +41,7 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "Education",
+  props: ["active"],
   setup() {
     const store = useStore();
     const icons = ref(

@@ -1,8 +1,12 @@
 <template>
   <article>
-    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">
+    <h1
+      class="font-nunito font-bold dark:text-white text-5xl animate__animated animate__slow"
+      :class="[scrollY >= rect ? 'animate__fadeInLeft' : '']"
+    >
       About Me
     </h1>
+
     <div class="flex flex-row items-start md:p-10 p-4">
       <div class="w-1/6 justify-center md:p-10 pb-4">
         <img
@@ -44,7 +48,7 @@ import { useStore } from "vuex";
 import Contact from "./Contact.vue";
 export default {
   name: "About",
-  props: ["active"],
+  props: ["rect", "scrollY"],
   components: {
     Contact,
   },
@@ -56,8 +60,12 @@ export default {
     const {
       state: { myAbout },
     } = store;
-    console.log();
     return { myAbout, img };
   },
 };
 </script>
+:class="[
+        scrollY > rect
+          ? ('animate__animated', 'animate__fadeInLeft', 'animate__slow')
+          : ('animate__animated', 'animate__fadeOutLeft', 'animate__slow'),
+      ]"

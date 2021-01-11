@@ -4,25 +4,25 @@
       <div class="bg-brand p-2 sticky top-0 z-10">
         <Darkmode @theme="theme" />
       </div>
-      <section class="h-screen"><Profile /></section>
+      <section class="h-screen mx-0"><Profile /></section>
+      <section class="container mx-auto" id="active_0">
+        <About :rect="rect[0]" :scrollY="scrollY" />
+      </section>
       <section class="container mx-auto" id="active_1">
-        <About :active="active" />
+        <Program :rect="rect[1]" :scrollY="scrollY" />
       </section>
       <section class="container mx-auto" id="active_2">
-        <Program :active="active" />
+        <Experience :active="active" />
       </section>
-      <section class="container mx-auto" id="active_3">
-        <Experience />
-      </section>
-      <section class="container mx-auto mb-4" id="active_4">
-        <Education />
+      <section class="container mx-auto mb-4" id="active_3">
+        <Education :active="active" />
       </section>
     </div>
   </div>
 </template>
 
 <script >
-import { ref, onUnmounted, onMounted } from "vue";
+import { ref, onUnmounted, onMounted, reactive } from "vue";
 import About from "./Components/About.vue";
 import Program from "./Components/Program.vue";
 import Education from "./Components/Education.vue";
@@ -45,30 +45,21 @@ export default {
     const theme = (event) => {
       mode.value = event;
     };
-    const active = ref("");
+    const active = ref();
+    const scrollY = ref();
+    const rect = reactive([]);
     const onScroll = () => {
       const elements = document.querySelectorAll("[id^='active_']");
-      const height =
-        window.innerHeight ||
-        document.documentElement.clientHeight ||
-        document.body.clientHeight;
-      for (const element of elements) {
-        const rect = element.getBoundingClientRect().top;
-        if (rect > 0 && rect < height / 2) {
-          active.value = [
-            "animate__animated",
-            "animate__fadeInDown",
-            "animate__infinite",
-            "animate__slower",
-          ];
-        }
+      scrollY.value = window.scrollY;
+      for (const [index, element] of elements.entries()) {
+        rect[index] = element.getBoundingClientRect().top;
+        //   alert(`scrollY: ${scrollY}, rect_${index}  : ${rect[index]}`);
+        // }
       }
     };
-
     onMounted(() => {
       window.addEventListener("scroll", onScroll);
     });
-
     onUnmounted(() => {
       window.removeEventListener("scroll", onScroll);
     });
@@ -76,6 +67,8 @@ export default {
       mode,
       theme,
       active,
+      scrollY,
+      rect,
     };
   },
 };
