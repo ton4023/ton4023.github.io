@@ -37,7 +37,8 @@ const state: RootState = {
       frameworks: [
         "https://symbols-electrical.getvecta.com/stencil_25/89_vuejs.fc3ffff5cd.svg",
          "https://symbols-electrical.getvecta.com/stencil_79/87_expressjs.72a4a0d57c.svg", 
-         "https://symbols-electrical.getvecta.com/stencil_97/2_tailwind-css.541185202d.svg"
+         "https://symbols-electrical.getvecta.com/stencil_97/2_tailwind-css.541185202d.svg",
+
       ],
       tools: [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/1051px-Adobe_XD_CC_icon.svg.png",
@@ -63,9 +64,9 @@ const state: RootState = {
 
   myExperience: [
     {
-      name: "ห้างหุ้นส่วนจำกัด บ้านบนดอย",
+      name: "หจก.บ้านบนดอย / บริษัท วินเนอร์ ลัคกี้ จำกัด",
       year:"Jun 2019 - Oct 2020",
-      detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า",],
+      detail: ["เปิดบิลใบกำกับภาษี","เปิดใบสั่งซื้อสินค้า", "ดูแลสต็อคสินค้า","ออกแบบโบรชัวร์สินค้า"],
     },
     {
       name: "บริษัท ทีโอที จำกัด (มหาชน)",

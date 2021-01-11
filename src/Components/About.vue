@@ -48,7 +48,7 @@ import { useStore } from "vuex";
 import Contact from "./Contact.vue";
 export default {
   name: "About",
-  props: ["rect", "scrollY"],
+  props: { rect: Number, scrollY: Number },
   components: {
     Contact,
   },

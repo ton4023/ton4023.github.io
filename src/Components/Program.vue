@@ -44,7 +44,7 @@ import { reactive, ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "Program",
-  props: ["rect", "scrollY"],
+  props: { rect: Number, scrollY: Number },
   setup() {
     const store = useStore();
     const state = reactive({});

@@ -4,7 +4,7 @@
       <div class="bg-brand p-2 sticky top-0 z-10">
         <Darkmode @theme="theme" />
       </div>
-      <section class="h-screen mx-0"><Profile /></section>
+      <section class="h-screen mx-0"><Profile :scrollY="scrollY" /></section>
       <section class="container mx-auto" id="active_0">
         <About :rect="rect[0]" :scrollY="scrollY" />
       </section>
@@ -12,10 +12,10 @@
         <Program :rect="rect[1]" :scrollY="scrollY" />
       </section>
       <section class="container mx-auto" id="active_2">
-        <Experience :active="active" />
+        <Experience :rect="rect[2]" :scrollY="scrollY" />
       </section>
       <section class="container mx-auto mb-4" id="active_3">
-        <Education :active="active" />
+        <Education :rect="rect[3]" :scrollY="scrollY" />
       </section>
     </div>
   </div>
@@ -46,15 +46,14 @@ export default {
       mode.value = event;
     };
     const active = ref();
-    const scrollY = ref();
+    const scrollY = ref(0);
     const rect = reactive([]);
     const onScroll = () => {
       const elements = document.querySelectorAll("[id^='active_']");
       scrollY.value = window.scrollY;
       for (const [index, element] of elements.entries()) {
         rect[index] = element.getBoundingClientRect().top;
-        //   alert(`scrollY: ${scrollY}, rect_${index}  : ${rect[index]}`);
-        // }
+        //   console.log(`scrollY: ${scrollY}, rect_${index}  : ${rect[index]}`);
       }
     };
     onMounted(() => {

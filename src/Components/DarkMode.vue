@@ -36,7 +36,6 @@ export default {
   name: "DarkMode",
   setup(_, { emit }) {
     const toggle = ref(false);
-
     watch(toggle, (toggle) => {
       toggle === true ? emit("theme", "dark") : emit("theme", "");
     });

@@ -1,6 +1,11 @@
 <template>
   <article>
-    <h1 :class="active" class="font-nunito font-bold text-5xl dark:text-white">Experience</h1>
+    <h1
+      class="font-nunito font-bold dark:text-white text-5xl animate__animated animate__slow"
+      :class="[scrollY >= rect ? 'animate__fadeInLeft' : '']"
+    >
+      Experience
+    </h1>
     <div class="flex flex-col" v-for="item in myExperience" :key="item">
       <!-- component -->
       <div class="flex flex-row relative font-prompt dark:text-gray-400">
@@ -37,7 +42,7 @@ import { ref } from "vue";
 import { useStore } from "vuex";
 export default {
   name: "Experience",
-  props: ["active"],
+  props: { rect: Number, scrollY: Number },
   setup() {
     const store = useStore();
     const icons = ref(
