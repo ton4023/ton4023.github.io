@@ -1,10 +1,10 @@
 <template >
   <div :class="mode" class="flex flex-col">
     <div class="dark:bg-gray-800 bg-gray-200">
-      <div class="bg-brand p-2 sticky top-0 z-10">
+      <div class="bg-brand p-2 sticky top-0 z-50">
         <Darkmode @theme="theme" />
       </div>
-      <section class="h-screen mx-0"><Profile :scrollY="scrollY" /></section>
+      <section class="h-screen mx-auto"><Profile :scrollY="scrollY" /></section>
       <section class="container mx-auto" id="active_0">
         <About :rect="rect[0]" :scrollY="scrollY" />
       </section>

@@ -3,10 +3,12 @@
     <div class="w-1/2 mt-14 md:mt-16">
       <div
         ref="profile"
-        class="text-center animate__animated animate__bounceInUp animate__slower"
+        class="-mx-12 md:mx-0 text-center animate__animated animate__bounceInUp animate__slower"
       >
-        <h1 class="text-5xl font-comfortaa pb-10 text-blue-900">
-          I'm Narongpol Prommajan
+        <h1
+          class="text-6xl font-comfortaa pb-10 text-blue-900 dark:text-blue-300 font-bold"
+        >
+          Hi, I'm Narongpol Prommajan
         </h1>
         <h2
           class="bg-gradient-to-r from-blue-500 to-pink-500 hover:from-red-500 hover:to-indigo-500 text-white rounded-full w-64 py-3 px-6 font-semibold text-2xl mx-auto"
@@ -19,10 +21,9 @@
       class="w-1/2 mt-10 md:mt-16 items-center text-center animate__animated animate__bounceInDown animate__slower"
     >
       <transition
-        name="fade"
         leave-active-class="animate__animated animate__fadeOutUp animate__slow"
       >
-        <div v-if="scrollY > 0">
+        <div v-if="scrollY > 100">
           <Coding />
         </div>
         <div v-else>

@@ -17,7 +17,7 @@
       <div class="w-5/6">
         <!-- card -->
         <div
-          class="mx-4 max-w-md md:max-w-6xl bg-gray-400 dark:bg-gray-600 rounded-lg shadow-lg"
+          class="mx-4 max-w-md md:max-w-6xl bg-gray-300 dark:bg-gray-600 rounded-lg shadow-lg"
         >
           <div
             class="px-6 py-4 text-justify text-black dark:text-white md:text-2xl text-xl font-prompt"
