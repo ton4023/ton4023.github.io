@@ -5,7 +5,7 @@
       :class="[scrollY >= rect ? 'animate__fadeInLeft' : '']"
     >
       <span
-        class="bg-clip-text text-ttransparent bg-gradient-to-r from-green-400 to-blue-500"
+        class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500"
         >Skills</span
       >
     </h1>
