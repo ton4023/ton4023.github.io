@@ -1,10 +1,13 @@
 <template>
   <article>
     <h1
-      class="font-nunito font-bold dark:text-white text-5xl animate__animated animate__slow"
+      class="font-nunito font-bold  text-5xl animate__animated animate__slow"
       :class="[scrollY >= rect ? 'animate__fadeInLeft' : '']"
     >
-      Experience
+      <span
+        class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500"
+        >Experience</span
+      >
     </h1>
     <div class="flex flex-col" v-for="item in myExperience" :key="item">
       <!-- component -->

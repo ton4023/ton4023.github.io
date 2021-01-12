@@ -6,7 +6,7 @@
         class="-mx-12 md:mx-0 text-center animate__animated animate__bounceInUp animate__slower"
       >
         <h1
-          class="text-6xl font-comfortaa pb-10 text-blue-900 dark:text-blue-300 font-bold"
+          class="text-5xl font-comfortaa pb-10 text-blue-900 dark:text-blue-300 font-bold"
         >
           Hi, I'm Narongpol Prommajan
         </h1>
