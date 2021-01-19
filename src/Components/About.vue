@@ -67,8 +67,3 @@ export default {
   },
 };
 </script>
-:class="[
-        scrollY > rect
-          ? ('animate__animated', 'animate__fadeInLeft', 'animate__slow')
-          : ('animate__animated', 'animate__fadeOutLeft', 'animate__slow'),
-      ]"
