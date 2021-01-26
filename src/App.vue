@@ -45,6 +45,12 @@ export default {
     const theme = (event) => {
       mode.value = event;
     };
+    if (localStorage.theme === "dark") {
+      mode.value = "dark";
+    } else {
+      mode.value = "light";
+    }
+
     const active = ref();
     const scrollY = ref(0);
     const rect = reactive([]);
