@@ -37,9 +37,7 @@ export default {
   setup(_, { emit }) {
     const toggle = ref(true);
     watch(toggle, (toggle) => {
-      toggle === true
-        ? (emit("theme", "dark"), (localStorage.theme = "dark"))
-        : (emit("theme", "light"), (localStorage.theme = "light"));
+      toggle === true ? emit("theme", "dark") : emit("theme", "light");
     });
 
     return { toggle };
