@@ -35,7 +35,7 @@ import { ref, watch } from "vue";
 export default {
   name: "DarkMode",
   setup(_, { emit }) {
-    const toggle = ref(false);
+    const toggle = ref(true);
     watch(toggle, (toggle) => {
       toggle === true
         ? (emit("theme", "dark"), (localStorage.theme = "dark"))
