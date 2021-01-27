@@ -41,7 +41,7 @@ export default {
     Darkmode,
   },
   setup() {
-    const mode = ref("");
+    const mode = ref("dark");
     const theme = (event) => {
       mode.value = event;
     };
